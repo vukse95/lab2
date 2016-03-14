@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "//samba03/nastavni_materijali/lprs2/vezbe/lab2/HDL/synthesis/lab2/top.xst" -ofn "//samba03/nastavni_materijali/lprs2/vezbe/lab2/HDL/synthesis/lab2/top.syr" 
