@@ -150,7 +150,8 @@ architecture rtl of top is
   signal pix_clock_s         : std_logic;
   signal vga_rst_n_s         : std_logic;
   signal pix_clock_n         : std_logic;
-   
+  
+  signal rgb					  : std_logic_vector(23 downto 0);
   signal dir_red             : std_logic_vector(7 downto 0);
   signal dir_green           : std_logic_vector(7 downto 0);
   signal dir_blue            : std_logic_vector(7 downto 0);
@@ -250,11 +251,28 @@ begin
   --dir_red
   --dir_green
   --dir_blue
+  
+   rgb <= x"FFFFFF" when dir_pixel_column < H_RES/8 else
+			 x"F4CE42" when dir_pixel_column > H_RES/8 and dir_pixel_column < 2*H_RES/8 else
+			 x"41E8F4" when dir_pixel_column > 2*H_RES/8 and dir_pixel_column < 3*H_RES/8 else
+			 x"41F455" when dir_pixel_column > 3*H_RES/8 and dir_pixel_column < 4*H_RES/8 else
+			 x"F441DF" when dir_pixel_column > 4*H_RES/8 and dir_pixel_column < 5*H_RES/8 else
+			 x"FF0000" when dir_pixel_column > 5*H_RES/8 and dir_pixel_column < 6*H_RES/8 else
+			 x"001DFF" when dir_pixel_column > 6*H_RES/8 and dir_pixel_column < 7*H_RES/8 else
+			 x"000000" when dir_pixel_column > 7*H_RES/8 and dir_pixel_column < 8*H_RES/8;
+		
+ 
+ 
+	 dir_red <= rgb(23 downto 16);
+	 dir_green <= rgb(15 downto 8);
+	 dir_blue <= rgb(7 downto 0);
  
   -- koristeci signale realizovati logiku koja pise po TXT_MEM
   --char_address
   --char_value
   --char_we
+  
+  
   
   -- koristeci signale realizovati logiku koja pise po GRAPH_MEM
   --pixel_address

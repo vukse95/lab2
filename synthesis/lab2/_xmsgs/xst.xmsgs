@@ -5,55 +5,58 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 163: Assignment to <arg fmt="%s" index="1">message_lenght</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 164: Assignment to <arg fmt="%s" index="1">message_lenght</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 168: Assignment to <arg fmt="%s" index="1">graphics_lenght</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 169: Assignment to <arg fmt="%s" index="1">graphics_lenght</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 106: &lt;<arg fmt="%s" index="1">oddr2</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 106: &lt;<arg fmt="%s" index="1">oddr2</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\vga.vhd" Line 123: &lt;<arg fmt="%s" index="1">srl16</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\vga.vhd" Line 123: &lt;<arg fmt="%s" index="1">srl16</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\vga_top.vhd" Line 301: Assignment to <arg fmt="%s" index="1">grid_size</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\vga_top.vhd" Line 301: Assignment to <arg fmt="%s" index="1">grid_size</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 142: Net &lt;<arg fmt="%s" index="1">char_we</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 255: Assignment to <arg fmt="%s" index="1">rgb</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 143: Net &lt;<arg fmt="%s" index="1">char_address[13]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 142: Net &lt;<arg fmt="%s" index="1">char_we</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 144: Net &lt;<arg fmt="%s" index="1">char_value[5]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 143: Net &lt;<arg fmt="%s" index="1">char_address[13]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 146: Net &lt;<arg fmt="%s" index="1">pixel_address[19]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 144: Net &lt;<arg fmt="%s" index="1">char_value[5]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 147: Net &lt;<arg fmt="%s" index="1">pixel_value[31]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 146: Net &lt;<arg fmt="%s" index="1">pixel_address[19]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 148: Net &lt;<arg fmt="%s" index="1">pixel_we</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 147: Net &lt;<arg fmt="%s" index="1">pixel_value[31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 154: Net &lt;<arg fmt="%s" index="1">dir_red[7]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 148: Net &lt;<arg fmt="%s" index="1">pixel_we</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 155: Net &lt;<arg fmt="%s" index="1">dir_green[7]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 155: Net &lt;<arg fmt="%s" index="1">dir_red[7]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd" Line 156: Net &lt;<arg fmt="%s" index="1">dir_blue[7]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 156: Net &lt;<arg fmt="%s" index="1">dir_green[7]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">199</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_column_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd" Line 157: Net &lt;<arg fmt="%s" index="1">dir_blue[7]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">199</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_row_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">200</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_column_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\samba03\nastavni_materijali\lprs2\vezbe\lab2\HDL\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">199</arg>: Output port &lt;<arg fmt="%s" index="3">vga_rst_n_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">200</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_row_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\ra127-2014\lprs2\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">200</arg>: Output port &lt;<arg fmt="%s" index="3">vga_rst_n_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">char_address</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
