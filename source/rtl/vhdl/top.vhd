@@ -23,6 +23,8 @@ entity top is
   port (
     clk_i          : in  std_logic;
     reset_n_i      : in  std_logic;
+	 direct_mode_i  : in  std_logic;
+	 display_mode_i : in std_logic_vector(1 downto 0);
     -- vga
     vga_hsync_o    : out std_logic;
     vga_vsync_o    : out std_logic;
@@ -157,6 +159,7 @@ architecture rtl of top is
   signal dir_blue            : std_logic_vector(7 downto 0);
   signal dir_pixel_column    : std_logic_vector(10 downto 0);
   signal dir_pixel_row       : std_logic_vector(10 downto 0);
+  signal text_addr_cnt		  : std_logic_vector(13 downto 0);
 
 begin
 
@@ -169,9 +172,9 @@ begin
   graphics_lenght <= conv_std_logic_vector(MEM_SIZE*8*8, GRAPH_MEM_ADDR_WIDTH);
   
   -- removed to inputs pin
-  direct_mode <= '1';
-  display_mode     <= "10";  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
-  
+  direct_mode <= '0';
+  --display_mode     <= "01";  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
+	display_mode <= display_mode_i;
   font_size        <= x"1";
   show_frame       <= '1';
   foreground_color <= x"FFFFFF";
@@ -252,14 +255,14 @@ begin
   --dir_green
   --dir_blue
   
-   rgb <= x"FFFFFF" when dir_pixel_column < H_RES/8 else
-			 x"F4CE42" when dir_pixel_column > H_RES/8 and dir_pixel_column < 2*H_RES/8 else
-			 x"41E8F4" when dir_pixel_column > 2*H_RES/8 and dir_pixel_column < 3*H_RES/8 else
-			 x"41F455" when dir_pixel_column > 3*H_RES/8 and dir_pixel_column < 4*H_RES/8 else
-			 x"F441DF" when dir_pixel_column > 4*H_RES/8 and dir_pixel_column < 5*H_RES/8 else
-			 x"FF0000" when dir_pixel_column > 5*H_RES/8 and dir_pixel_column < 6*H_RES/8 else
-			 x"001DFF" when dir_pixel_column > 6*H_RES/8 and dir_pixel_column < 7*H_RES/8 else
-			 x"000000" when dir_pixel_column > 7*H_RES/8 and dir_pixel_column < 8*H_RES/8;
+   rgb <= x"FFFFFF" when dir_pixel_column <= H_RES/8 else
+			 x"F4CE42" when dir_pixel_column > H_RES/8 and dir_pixel_column <= 2*H_RES/8 else
+			 x"41E8F4" when dir_pixel_column > 2*H_RES/8 and dir_pixel_column <= 3*H_RES/8 else
+			 x"41F455" when dir_pixel_column > 3*H_RES/8 and dir_pixel_column <= 4*H_RES/8 else
+			 x"F441DF" when dir_pixel_column > 4*H_RES/8 and dir_pixel_column <= 5*H_RES/8 else
+			 x"FF0000" when dir_pixel_column > 5*H_RES/8 and dir_pixel_column <= 6*H_RES/8 else
+			 x"001DFF" when dir_pixel_column > 6*H_RES/8 and dir_pixel_column <= 7*H_RES/8 else
+			 x"000000" when dir_pixel_column > 7*H_RES/8 and dir_pixel_column <= 8*H_RES/8;
 		
  
  
@@ -272,7 +275,54 @@ begin
   --char_value
   --char_we
   
-  
+	char_we <= '1';
+	
+	process(pix_clock_s) begin
+		if(pix_clock_s'event and pix_clock_s = '1') then
+			if(text_addr_cnt = 4800-1) then
+				text_addr_cnt <= "00000000000000";
+			else
+				text_addr_cnt <= text_addr_cnt + 1;
+			end if;
+		end if;
+	end process;
+	
+  process(text_addr_cnt) begin
+		if(text_addr_cnt = 2300) then
+			char_value <= "001010";				--J
+		elsif(text_addr_cnt = 2301) then
+			char_value <= "000101";				--E
+		elsif(text_addr_cnt = 2302) then
+			char_value <= "001100";				--L
+		elsif(text_addr_cnt = 2303) then
+			char_value <= "000101";				--E
+		elsif(text_addr_cnt = 2304) then
+			char_value <= "001110";				--N
+		elsif(text_addr_cnt = 2305) then
+			char_value <= "000001";				--A
+		elsif(text_addr_cnt = 2306) then
+			char_value <= "100000";				--razmak
+		elsif(text_addr_cnt = 2307) then
+			char_value <= "001001";				--I
+		elsif(text_addr_cnt = 2308) then
+			char_value <= "100000";				--razmak
+		elsif(text_addr_cnt = 2309) then
+			char_value <= "010011";				--S
+		elsif(text_addr_cnt = 2310) then
+			char_value <= "010100";				--T
+		elsif(text_addr_cnt = 2311) then
+			char_value <= "000101";				--E
+		elsif(text_addr_cnt = 2312) then
+			char_value <= "000110";				--F
+		elsif(text_addr_cnt = 2313) then
+			char_value <= "000001";				--A
+		elsif(text_addr_cnt = 2314) then
+			char_value <= "001110";				--N
+		else
+			char_value <= "100000";
+		end if;
+	end process;
+  char_address <= text_addr_cnt;
   
   -- koristeci signale realizovati logiku koja pise po GRAPH_MEM
   --pixel_address
