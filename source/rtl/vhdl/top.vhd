@@ -160,6 +160,8 @@ architecture rtl of top is
   signal dir_pixel_column    : std_logic_vector(10 downto 0);
   signal dir_pixel_row       : std_logic_vector(10 downto 0);
   signal text_addr_cnt		  : std_logic_vector(13 downto 0);
+  signal pixel_addr_cnt		  : std_logic_vector(19 downto 0);
+  signal box_size				  : std_logic_vector(7 downto 0);
 
 begin
 
@@ -288,35 +290,35 @@ begin
 	end process;
 	
   process(text_addr_cnt) begin
-		if(text_addr_cnt = 2300) then
+		if(text_addr_cnt = 50) then
 			char_value <= "001010";				--J
-		elsif(text_addr_cnt = 2301) then
+		elsif(text_addr_cnt = 51) then
 			char_value <= "000101";				--E
-		elsif(text_addr_cnt = 2302) then
+		elsif(text_addr_cnt = 52) then
 			char_value <= "001100";				--L
-		elsif(text_addr_cnt = 2303) then
+		elsif(text_addr_cnt = 53) then
 			char_value <= "000101";				--E
-		elsif(text_addr_cnt = 2304) then
+		elsif(text_addr_cnt = 54) then
 			char_value <= "001110";				--N
-		elsif(text_addr_cnt = 2305) then
+		elsif(text_addr_cnt = 55) then
 			char_value <= "000001";				--A
-		elsif(text_addr_cnt = 2306) then
+		elsif(text_addr_cnt = 56) then
 			char_value <= "100000";				--razmak
-		elsif(text_addr_cnt = 2307) then
+		elsif(text_addr_cnt = 57) then
 			char_value <= "001001";				--I
-		elsif(text_addr_cnt = 2308) then
+		elsif(text_addr_cnt = 58) then
 			char_value <= "100000";				--razmak
-		elsif(text_addr_cnt = 2309) then
+		elsif(text_addr_cnt = 59) then
 			char_value <= "010011";				--S
-		elsif(text_addr_cnt = 2310) then
+		elsif(text_addr_cnt = 60) then
 			char_value <= "010100";				--T
-		elsif(text_addr_cnt = 2311) then
+		elsif(text_addr_cnt = 61) then
 			char_value <= "000101";				--E
-		elsif(text_addr_cnt = 2312) then
+		elsif(text_addr_cnt = 62) then
 			char_value <= "000110";				--F
-		elsif(text_addr_cnt = 2313) then
+		elsif(text_addr_cnt = 63) then
 			char_value <= "000001";				--A
-		elsif(text_addr_cnt = 2314) then
+		elsif(text_addr_cnt = 64) then
 			char_value <= "001110";				--N
 		else
 			char_value <= "100000";
@@ -329,5 +331,71 @@ begin
   --pixel_value
   --pixel_we
   
+  pixel_we <= '1';
+  
+  process(pix_clock_s) begin
+		if(pix_clock_s'event and pix_clock_s = '1') then
+			if(pixel_addr_cnt = 9600-1) then
+				pixel_addr_cnt <= "00000000000000000000";
+			else
+				pixel_addr_cnt <= pixel_addr_cnt + 1;
+			end if;
+		end if;
+	end process;
+	
+--	process(pixel_addr_cnt)begin
+--		if(pixel_addr_cnt >= 150 and pixel_addr_cnt < 2000 and box_size >= 0 and box_size < 100)then
+--			box_size <= box_size + 1;
+--			pixel_value <= x"FFFFFFFF";
+--		else
+--			pixel_value <= x"00000000";
+--		end if;
+--	end process;
+
+	process(pixel_addr_cnt)begin
+		if(pixel_addr_cnt >= 200 and pixel_addr_cnt < 201) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 220 and pixel_addr_cnt < 221) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 240 and pixel_addr_cnt < 241) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 260 and pixel_addr_cnt < 261) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 280 and pixel_addr_cnt < 281) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 300 and pixel_addr_cnt < 301) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 320 and pixel_addr_cnt < 321) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 340 and pixel_addr_cnt < 341) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 360 and pixel_addr_cnt < 361) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 380 and pixel_addr_cnt < 381) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 400 and pixel_addr_cnt < 401) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 420 and pixel_addr_cnt < 421) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 440 and pixel_addr_cnt < 441) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 460 and pixel_addr_cnt < 461) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 480 and pixel_addr_cnt < 481) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 500 and pixel_addr_cnt < 501) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 520 and pixel_addr_cnt < 521) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 540 and pixel_addr_cnt < 541) then
+			pixel_value <= x"FFFFFFFF";
+		elsif(pixel_addr_cnt >= 560 and pixel_addr_cnt < 561) then
+			pixel_value <= x"FFFFFFFF";
+		else
+			pixel_value <= x"00000000";
+		end if;
+	end process;
+	
+	pixel_address <= pixel_addr_cnt;
   
 end rtl;
