@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.07 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: top.prj
 
@@ -189,7 +189,7 @@ INFO:Xst:3210 - "C:\Users\student.DOMAIN\Desktop\RA210_2014\LPRS\Lab2\lab2\sourc
     Found 20-bit register for signal <pixel_addr_cnt>.
     Found 14-bit adder for signal <text_addr_cnt[13]_GND_5_o_add_39_OUT> created at line 287.
     Found 20-bit adder for signal <pixel_addr_cnt[19]_GND_5_o_add_74_OUT> created at line 341.
-    Found 128x6-bit Read Only RAM for signal <_n0399>
+    Found 128x6-bit Read Only RAM for signal <_n0453>
 WARNING:Xst:737 - Found 1-bit latch for signal <rgb<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <rgb<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <rgb<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -236,13 +236,31 @@ WARNING:Xst:737 - Found 1-bit latch for signal <rgb<0>>. Latches may be generate
     Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_95_o> created at line 372
     Found 20-bit comparator lessequal for signal <n0201> created at line 374
     Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_97_o> created at line 374
+    Found 20-bit comparator lessequal for signal <n0205> created at line 376
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_99_o> created at line 376
+    Found 20-bit comparator lessequal for signal <n0209> created at line 378
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_101_o> created at line 378
+    Found 20-bit comparator lessequal for signal <n0213> created at line 380
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_103_o> created at line 380
+    Found 20-bit comparator lessequal for signal <n0217> created at line 382
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_105_o> created at line 382
+    Found 20-bit comparator lessequal for signal <n0221> created at line 384
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_107_o> created at line 384
+    Found 20-bit comparator lessequal for signal <n0225> created at line 386
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_109_o> created at line 386
+    Found 20-bit comparator lessequal for signal <n0229> created at line 388
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_111_o> created at line 388
+    Found 20-bit comparator lessequal for signal <n0233> created at line 390
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_113_o> created at line 390
+    Found 20-bit comparator lessequal for signal <n0237> created at line 392
+    Found 20-bit comparator greater for signal <pixel_addr_cnt[19]_GND_5_o_LessThan_115_o> created at line 392
     Summary:
 	inferred   1 RAM(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred  34 D-type flip-flop(s).
 	inferred  18 Latch(s).
-	inferred  28 Comparator(s).
-	inferred  71 Multiplexer(s).
+	inferred  46 Comparator(s).
+	inferred  80 Multiplexer(s).
 Unit <top> synthesized.
 
 Synthesizing Unit <vga_top>.
@@ -397,21 +415,21 @@ Macro Statistics
  8-bit register                                        : 3
 # Latches                                              : 19
  1-bit latch                                           : 19
-# Comparators                                          : 44
+# Comparators                                          : 62
  11-bit comparator greater                             : 11
  11-bit comparator lessequal                           : 3
  12-bit comparator greater                             : 3
  12-bit comparator lessequal                           : 3
- 20-bit comparator greater                             : 10
- 20-bit comparator lessequal                           : 10
+ 20-bit comparator greater                             : 19
+ 20-bit comparator lessequal                           : 19
  31-bit comparator greater                             : 4
-# Multiplexers                                         : 83
+# Multiplexers                                         : 92
  1-bit 2-to-1 multiplexer                              : 66
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 32-to-1 multiplexer                             : 1
  1-bit 8-to-1 multiplexer                              : 1
  31-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 9
+ 32-bit 2-to-1 multiplexer                             : 18
  6-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
 # Xors                                                 : 1
@@ -491,7 +509,7 @@ Unit <text_mem> synthesized (advanced).
 Synthesizing (advanced) Unit <top>.
 The following registers are absorbed into counter <text_addr_cnt>: 1 register on signal <text_addr_cnt>.
 The following registers are absorbed into counter <pixel_addr_cnt>: 1 register on signal <pixel_addr_cnt>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0399> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0453> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -531,21 +549,21 @@ Macro Statistics
  20-bit up counter                                     : 1
 # Registers                                            : 37
  Flip-Flops                                            : 37
-# Comparators                                          : 44
+# Comparators                                          : 62
  11-bit comparator greater                             : 11
  11-bit comparator lessequal                           : 3
  12-bit comparator greater                             : 3
  12-bit comparator lessequal                           : 3
- 20-bit comparator greater                             : 10
- 20-bit comparator lessequal                           : 10
+ 20-bit comparator greater                             : 19
+ 20-bit comparator lessequal                           : 19
  31-bit comparator greater                             : 4
-# Multiplexers                                         : 83
+# Multiplexers                                         : 92
  1-bit 2-to-1 multiplexer                              : 66
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 32-to-1 multiplexer                             : 1
  1-bit 8-to-1 multiplexer                              : 1
  31-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 9
+ 32-bit 2-to-1 multiplexer                             : 18
  6-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
 # Xors                                                 : 1
@@ -593,9 +611,9 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
     rgb_0 in unit <top>
     rgb_1 in unit <top>
     rgb_4 in unit <top>
-    rgb_5 in unit <top>
     rgb_6 in unit <top>
     rgb_7 in unit <top>
+    rgb_5 in unit <top>
     rgb_8 in unit <top>
     rgb_9 in unit <top>
     rgb_10 in unit <top>
@@ -627,9 +645,9 @@ WARNING:Xst:2677 - Node <rgb_11> of sequential type is unconnected in block <top
 WARNING:Xst:2677 - Node <rgb_10> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <rgb_9> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <rgb_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <rgb_5> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <rgb_7> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <rgb_6> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <rgb_5> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <rgb_4> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <rgb_1> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <rgb_0> of sequential type is unconnected in block <top>.
@@ -668,12 +686,12 @@ INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/
 WARNING:Xst:1710 - FF/Latch <text_addr_cnt_13> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <vga_top_i/vga_i/vga_sync_i/h_count_r_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <vga_top_i/vga_i/vga_sync_i/v_count_r_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <pixel_addr_cnt_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <text_addr_cnt_0> 
-INFO:Xst:2261 - The FF/Latch <pixel_addr_cnt_1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <text_addr_cnt_1> 
-INFO:Xst:2261 - The FF/Latch <pixel_addr_cnt_2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <text_addr_cnt_2> 
-INFO:Xst:2261 - The FF/Latch <pixel_addr_cnt_3> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <text_addr_cnt_3> 
-INFO:Xst:2261 - The FF/Latch <pixel_addr_cnt_4> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <text_addr_cnt_4> 
-INFO:Xst:2261 - The FF/Latch <pixel_addr_cnt_5> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <text_addr_cnt_5> 
+INFO:Xst:2261 - The FF/Latch <text_addr_cnt_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <pixel_addr_cnt_0> 
+INFO:Xst:2261 - The FF/Latch <text_addr_cnt_1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <pixel_addr_cnt_1> 
+INFO:Xst:2261 - The FF/Latch <text_addr_cnt_2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <pixel_addr_cnt_2> 
+INFO:Xst:2261 - The FF/Latch <text_addr_cnt_3> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <pixel_addr_cnt_3> 
+INFO:Xst:2261 - The FF/Latch <text_addr_cnt_4> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <pixel_addr_cnt_4> 
+INFO:Xst:2261 - The FF/Latch <text_addr_cnt_5> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <pixel_addr_cnt_5> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -709,15 +727,15 @@ Top Level Output File Name         : top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 268
+# BELS                             : 264
 #      GND                         : 2
 #      INV                         : 7
 #      LUT1                        : 49
-#      LUT2                        : 15
-#      LUT3                        : 13
-#      LUT4                        : 15
-#      LUT5                        : 9
-#      LUT6                        : 56
+#      LUT2                        : 14
+#      LUT3                        : 12
+#      LUT4                        : 16
+#      LUT5                        : 8
+#      LUT6                        : 54
 #      MUXCY                       : 49
 #      MUXF7                       : 4
 #      VCC                         : 2
@@ -753,16 +771,16 @@ Selected Device : 6slx45fgg676-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              64  out of  54576     0%  
- Number of Slice LUTs:                  165  out of  27288     0%  
-    Number used as Logic:               164  out of  27288     0%  
+ Number of Slice LUTs:                  161  out of  27288     0%  
+    Number used as Logic:               160  out of  27288     0%  
     Number used as Memory:                1  out of   6408     0%  
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    183
-   Number with an unused Flip Flop:     119  out of    183    65%  
-   Number with an unused LUT:            18  out of    183     9%  
-   Number of fully used LUT-FF pairs:    46  out of    183    25%  
+ Number of LUT Flip Flop pairs used:    179
+   Number with an unused Flip Flop:     115  out of    179    64%  
+   Number with an unused LUT:            18  out of    179    10%  
+   Number of fully used LUT-FF pairs:    46  out of    179    25%  
    Number of unique control sets:        11
 
 IO Utilization: 
@@ -824,7 +842,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_i'
   Clock period: 9.513ns (frequency: 105.120MHz)
-  Total number of paths / destination ports: 5279 / 275
+  Total number of paths / destination ports: 5221 / 275
 -------------------------------------------------------------------------
 Delay:               10.274ns (Levels of Logic = 3)
   Source:            vga_top_i/vga_i/vga_sync_i/v_count_r_8 (FF)
@@ -838,7 +856,7 @@ Delay:               10.274ns (Levels of Logic = 3)
     ----------------------------------------  ------------
      FDRE:C->Q             8   0.525   0.943  vga_top_i/vga_i/vga_sync_i/v_count_r_8 (vga_top_i/vga_i/vga_sync_i/v_count_r_8)
      DSP48A1:B4->P11       4   5.145   0.912  vga_top_i/Maddsub_n0103 (vga_top_i/txt_rom_addr_c<11>)
-     LUT2:I0->O            9   0.250   1.084  vga_top_i/text_mem_i/index_t[30]_GND_22_o_LessThan_5_o1_SW1 (N18)
+     LUT2:I0->O            9   0.250   1.084  vga_top_i/text_mem_i/index_t[30]_GND_22_o_LessThan_5_o1_SW1 (N14)
      LUT6:I4->O            3   0.250   0.765  vga_top_i/text_mem_i/Mmux_index14 (vga_top_i/text_mem_i/index<0>)
      RAMB16BWER:ADDRB1         0.400          vga_top_i/text_mem_i/Mram_text_mem2
     ----------------------------------------
@@ -929,12 +947,12 @@ clk_i          |         |         |    4.563|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.31 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.62 secs
  
 --> 
 
-Total memory usage is 283852 kilobytes
+Total memory usage is 283788 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   52 (   0 filtered)
