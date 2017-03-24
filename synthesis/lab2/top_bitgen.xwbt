@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=E:\Faks\godina3\VI semestar\LPRS2\novo\synthesis\lab2\top.ncd
-OUTFILE=E:\Faks\godina3\VI semestar\LPRS2\novo\synthesis\lab2\top.bit
+INFILE=C:\Users\student.DOMAIN\Desktop\RA210_2014\LPRS\Lab2\lab2\synthesis\lab2\top.ncd
+OUTFILE=C:\Users\student.DOMAIN\Desktop\RA210_2014\LPRS\Lab2\lab2\synthesis\lab2\top.bit
 FAMILY=Spartan6
 PART=xc6slx45-2fgg676
-WORKINGDIR=E:\Faks\godina3\VI semestar\LPRS2\novo\synthesis\lab2
-LICENSE=WebPack
-USER_INFO=211110760_0_0_557
+WORKINGDIR=C:\Users\student.DOMAIN\Desktop\RA210_2014\LPRS\Lab2\lab2\synthesis\lab2
+LICENSE=ISE
+USER_INFO=209858334_178080923_210593072_268
